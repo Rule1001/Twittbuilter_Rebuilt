@@ -2,9 +2,10 @@ import React from 'react';
 import '../style/App.css';
 import NavBar from './NavBar';
 import Trends from './Trends';
+import TweetList from './TweetList';
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
       <div className="component-App">
         <NavBar
@@ -21,7 +22,8 @@ class App extends React.Component {
           <div className="col-sm-6 col-md-6">
             <p>TweetBox</p>
             <div>
-              <p>TweetList</p>
+              <TweetList
+              />
             </div>
           </div>
 

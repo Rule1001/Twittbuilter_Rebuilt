@@ -6,7 +6,7 @@ import axios from 'axios';
 const API_URL = 'https://northwitter-api-jinwmdmaba.now.sh';
 
 class Trends extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       trends: []
@@ -26,6 +26,7 @@ class Trends extends React.Component {
       })
       .catch(console.log);
   }
+
   render () {
     return (
       <div className="component-Trends panel" >
@@ -39,7 +40,7 @@ class Trends extends React.Component {
               this.state.trends.slice(0, 10).map((trend, i) => (
                 <Trend
                   key={i}
-                  handle={trend.name}
+                  tag={trend.name}
                   volume={trend.tweet_volume}
                   url={trend.url}
                 />
@@ -53,15 +54,15 @@ class Trends extends React.Component {
 
 const Trend = (props) => (
   <div className="component-Trend">
-    <a href={props.url}>{props.handle}</a>
+    <a href={props.url}>{props.tag}</a>
     <p>{props.volume}</p>
   </div>
 );
 
 
-Trends.propTypes = {
-  handle: PropTypes.string.isRequired,
-  volume: PropTypes.string.isRequired,
+Trend.propTypes = {
+  tag: PropTypes.string.isRequired,
+  volume: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired
 };
 
