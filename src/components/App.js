@@ -1,16 +1,20 @@
 import React from 'react';
 import '../style/App.css';
+import NavBar from './NavBar';
+import Trends from './Trends';
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <div className="component-App">
-        <p>NavBar</p>
+        <NavBar
+        />
         <div className='container'>
           <div className="col-sm-3 col-md-3">
             <p>Profile</p>
             <div >
-<p>Trends</p>
+              <Trends
+              />
             </div>
           </div>
 
@@ -29,7 +33,7 @@ class App extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
